@@ -1,0 +1,36 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    PFE par entreprise
+{% endblock %}
+
+{% block body %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" >
+            <li class="breadcrumb-item active" aria-current="page">Nombre de PFE par entreprise </li>
+        </ol>
+    </nav>
+
+    <!-- cards -->
+    <div class="container">
+        <div class="row">
+            {% for e in entreprises %}
+
+                <div class="card text-white col-sm-4 m-2 bg-{% if loop.index is odd %}danger {% else%}secondary{%endif%} mb-3 " style="max-width: 18rem;">
+                    <div class="card-header"> {{ e.designation}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ e.pfe.count }} pfe(s)</h5>
+                        <p class="card-text"> </p>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

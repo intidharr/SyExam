@@ -1,0 +1,28 @@
+{% extends 'template.html.twig' %}
+
+{% block title %} liste de pfe {% endblock %}
+
+{% block body %}
+
+
+    <!-- cards -->
+    <div class="container">
+        <div class="row">
+            {% for e in pfes %}
+
+                <div class="card text-white col-sm-4 m-2 bg-primary mb-3 " style="max-width: 18rem;">
+                    <div class="card-header"> Titre : {{ e.title}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title"> Nom d'etudiant :{{ e.student }} </h5>
+                        <h5 class="card-title"> nom de l'entreprise :{{ (e.entreprise).getDesignation() }} </h5>
+                        <p class="card-text"> </p>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

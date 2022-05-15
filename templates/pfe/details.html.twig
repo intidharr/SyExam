@@ -1,0 +1,21 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    details PFE
+{% endblock %}
+
+{% block body %}
+    <div class="alert alert-success">
+        Votre pfe a été ajouté avec succès
+    </div>
+    <div class="container">
+        Les information du pfe sont : <br>
+        votre nom est : {{pfe.student}} <br>
+        Le Titre est : {{ pfe.title }} <br>
+        L'entreprise ou le pfe est affectué : {{ pfe.entreprise }} <br>
+    </div>
+    <div class="button">
+        <a class="nav-link" href="{{path('app_pfe')}}">Liste des PFEs </a>
+
+    </div>
+{% endblock %}
